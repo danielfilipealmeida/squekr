@@ -21,8 +21,11 @@ class App extends Component {
         return (
             <div className="App">
                 <Header />
-                <MessageForm email={this.state.email} />
-                <Messages />
+                <div className='container' id="mainContainer">
+                    <div className='row'>
+                        {this.props.children}
+                    </div>
+                </div>
                 <Footer />
           </div>
         );
