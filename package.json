@@ -8,6 +8,7 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "mocha": "^3.1.2",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
@@ -15,6 +16,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "nodemon src/server.js",
+    "test-server": "./node_modules/mocha/bin/mocha tests/backend/**/"
   }
 }
