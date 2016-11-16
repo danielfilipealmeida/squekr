@@ -1,3 +1,5 @@
+var testEmail = require('../utils').testEmail;
+
 /**
  * The messages. 
  * currently this is still defined in the code and should change to 
@@ -6,12 +8,9 @@
 var messages = [];
 
 
-testEmail = (email) => {
-    if (typeof email !== 'string') throw("Email must be a string");
-    let emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; 
-    if(emailRegex.test(email) === false) throw("Invalid Email");
-}
-
+/**
+ * Populate with some dummy messages for development and testing purposes.
+ */
 initTestData = () => {
     messages = [
         {
@@ -42,6 +41,11 @@ getMessagesFromUser = (email) => {
 };
 
 
+/**
+ * Add a new message from a user to the message list
+ * @param {string} email    the email of the user
+ * @param {string} message  the new message 
+ */
 addMessageFromUser = (email, message) => {
     // validate email
     testEmail(email);
@@ -58,6 +62,7 @@ addMessageFromUser = (email, message) => {
         email: email
     });
 };
+
 
 module.exports.getMessagesFromUser = getMessagesFromUser;
 module.exports.addMessageFromUser = addMessageFromUser;
