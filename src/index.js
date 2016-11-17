@@ -4,7 +4,7 @@ import App from './frontend/components/App';
 import UserPage from './frontend/components/UserPage';
 import NoMatch from './frontend/components/NoMatch';
 import './css/index.css';
-import {Router, Route, IndexRoute, Link, browserHistory, hashHistory} from  'react-router';
+import {Router, Route, browserHistory} from  'react-router';
 
 ReactDOM.render(
   <Router history={browserHistory}>

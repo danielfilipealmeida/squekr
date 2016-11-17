@@ -64,5 +64,6 @@ addMessageFromUser = (email, message) => {
 };
 
 
+module.exports.initTestData = initTestData;
 module.exports.getMessagesFromUser = getMessagesFromUser;
 module.exports.addMessageFromUser = addMessageFromUser;

@@ -9,7 +9,7 @@ class Message extends Component {
 
     render() {
         return (
-            <li className="Message">
+            <li className="Message list-group-item">
                 {this.state.data.message}
             </li>
         );

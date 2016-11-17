@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import '../../css/App.css';
-import Messages from './Messages.js'
-import MessageForm from './MessageForm.js'
 import Header from './Header.js'
 import Footer from './Footer.js'
 

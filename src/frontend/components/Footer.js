@@ -4,10 +4,11 @@ import React, { Component } from 'react';
 class Footer extends Component {
     render() {
         return (
-            <div className="Footer">
-                (c) Daniel Almeida
-                contact: daniel@danielfilipea.net
-            </div>
+            <footer className="footer">
+                <div className="container">
+                    <p className="text-muted">Made by Daniel Almeida: daniel@danielfilipea.net</p>
+                </div>
+            </footer>
         );
     }
 }
