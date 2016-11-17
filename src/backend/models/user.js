@@ -8,6 +8,15 @@ var users = [];
 
 
 /**
+ * Populate with some dummy user for development and testing purposes.
+ */
+initTestData = () => {
+    addUser('daniel@danielfilipea.net', 'some_pass');
+    console.log(users);
+}
+
+
+/**
  * Execute validation tests on the email and throws if there is an error
  * @param {string} email    the email to be validated
  */
@@ -78,10 +87,13 @@ authenticateUser = (email, encryptPassword) => {
     validatePassword(encryptPassword);
     testEmail(email);
 
+    console.log(email);
+    console.log(encryptPassword);
     // search for the user
     return (
         users.find (
             (userRecord) => {
+                console.log(userRecord);
                 return (
                     userRecord.email === email && 
                     userRecord.password === encryptPassword
@@ -103,3 +115,4 @@ module.exports.addUser = addUser;
 module.exports.authenticateUser = authenticateUser;
 module.exports.getUser = getUser;
 module.exports.emptyUsers = emptyUsers;
+module.exports.initTestData = initTestData;

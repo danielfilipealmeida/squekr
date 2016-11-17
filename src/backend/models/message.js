@@ -15,12 +15,12 @@ initTestData = () => {
     messages = [
         {
             key: 1,
-            message: "this is a test message. message 1",
+            message: "Lorem Ipsum",
             email: 'daniel@danielfilipea.net'
         },
         {
             key: 2,
-            message: "another test message",
+            message: "Hello World",
             email: 'daniel@danielfilipea.net'
         }
     ];
@@ -37,7 +37,7 @@ getMessagesFromUser = (email) => {
 
     return messages.filter((message) => {
         return message.email == email
-    });
+    }).reverse();
 };
 
 
