@@ -7,16 +7,29 @@ import NoMatch from './frontend/components/NoMatch';
 import './css/index.css';
 import {Router, Route, browserHistory} from  'react-router';
 
-var mainState = {
-  email:'daniel@danielfilipea.net',
-  password:'some_pass',
-  loggedin:false
-}
 
+var mainState = {};
+
+
+(() => {
+  mainState = {
+      email: (sessionStorage.email === null) ? '' : sessionStorage.email,
+      password: (sessionStorage.password === null) ? '' : sessionStorage.password,
+      loggedin: (sessionStorage.loggedin === null) ? false : sessionStorage.loggedin
+  };
+})()
+  
+var updateMainState = (email, password, loggedin) => {
+  mainState = {
+    email: email,
+    password: password,
+    loggedin: loggedin
+  }
+}
 
 ReactDOM.render(
   <Router history={browserHistory}>
-    <Route path="/" component={App} mainState={mainState}>
+    <Route path="/" component={App} mainState={mainState} onUpdateMainState={updateMainState}>
       <Route path="user" component={UserPage}/>
       <Route path="postMessage" component={MessageForm} mainState={mainState}/>
     </Route>
@@ -24,3 +37,4 @@ ReactDOM.render(
   </Router>,
   document.getElementById('root')
 );
+

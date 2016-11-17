@@ -13,10 +13,13 @@ class Header extends Component {
                     </div>
                     
                     <div id="navbar" className="collapse navbar-collapse">
+                        {this.props.loggedin ?
                         <ul className="nav navbar-nav">
                             <li><Link to='user'>User's Messages</Link></li>
                             <li><Link to='postMessage'>Post a Message</Link></li>
-                        </ul>
+                            <li><a href="#" onClick={this.props.handeLogout}>Logout</a></li>
+                        </ul> : null}
+
                     </div>
                 </div>
                 </nav>            

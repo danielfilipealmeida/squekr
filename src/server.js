@@ -25,6 +25,7 @@ app.use((req, res, next) => {
  * Setup the routes to the corresponding controllers
  */
 app.use('/messages', require('./backend/controllers/messages.js'));
+app.use('/users', require('./backend/controllers/users.js'));
 
 
 app.listen(port, () => {

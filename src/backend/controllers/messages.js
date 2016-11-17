@@ -11,6 +11,7 @@ var	jsonParser  = require.main.exports.jsonParser;
 
 /**
  * Handles the GET route for messages. returns all the users' messages
+ * TODO: needs user validation. should only accept requests from valid users, like how it's done with the POST 
  */
 router.get('/:userEmail',  (req, res) => {
     try {
@@ -39,7 +40,6 @@ router.post('', jsonParser, (req,res) => {
         res.send({success: true, message: "Message added successfully!"});
     }
     catch (error) {
-        console.log("!!!");
         res.send({error: error});
     }
 })

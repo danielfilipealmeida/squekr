@@ -12,7 +12,6 @@ var users = [];
  */
 initTestData = () => {
     addUser('daniel@danielfilipea.net', 'some_pass');
-    console.log(users);
 }
 
 
@@ -87,13 +86,10 @@ authenticateUser = (email, encryptPassword) => {
     validatePassword(encryptPassword);
     testEmail(email);
 
-    console.log(email);
-    console.log(encryptPassword);
     // search for the user
     return (
         users.find (
             (userRecord) => {
-                console.log(userRecord);
                 return (
                     userRecord.email === email && 
                     userRecord.password === encryptPassword
